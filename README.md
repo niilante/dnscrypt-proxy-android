@@ -1,32 +1,44 @@
-# DNSCrypt Proxy 2 for Android | privacy oriented
+# DNSCrypt Proxy 2 for Android via Magisk
 
-A flexible DNS proxy, with support for modern encrypted DNS protocols such as [DNSCrypt v2](https://dnscrypt.info/protocol), [DNS-over-HTTPS](https://www.rfc-editor.org/rfc/rfc8484.txt) and [Anonymized DNSCrypt](https://github.com/DNSCrypt/dnscrypt-protocol/blob/master/ANONYMIZED-DNSCRYPT.txt).
+The project aims to bring DNSCrypt-Proxyv2 to Android via [Magisk module](https://www.xda-developers.com/how-to-install-magisk/).
+
+
+## What is DNSCrypt-Proxyv2 and why do I need it?!
+
+DNSCRypt-proxyv2 is a flexible DNS proxy, with support for modern encrypted DNS protocols such as [DNSCrypt v2](https://dnscrypt.info/protocol), [DNS-over-HTTPS](https://www.rfc-editor.org/rfc/rfc8484.txt) and [Anonymized DNSCrypt](https://github.com/DNSCrypt/dnscrypt-protocol/blob/master/ANONYMIZED-DNSCRYPT.txt).
 
 
 ## Features
-- For all features please refer to the [OFFICIAL PAGE](https://github.com/DNSCrypt/dnscrypt-proxy#features)
-- All binary files are downloaded from the [OFFICIAL RELEASE PAGE](https://github.com/jedisct1/dnscrypt-proxy/releases)
 
+- [Please check the official page](https://github.com/DNSCrypt/dnscrypt-proxy#features) to see what DNSCrypt-Proxyv2 has to offer.
+- The project related DNSCrypt-Proxyv2 binaries are taken from the [official release page](https://github.com/jedisct1/dnscrypt-proxy/releases).
+
+
+## Donations
+
+**I do not accept donations** for this project, if you want to support someone, please [donate to the original DNSCrypt-Proxyv2 project](https://github.com/DNSCrypt/dnscrypt-proxy). This helps to keep DNSCrypt-Proxyv2 alive and push the project and the original developer.
 
 ## Pre-built binaries
 
 Up-to-date, pre-built binaries are available for:
+- `Android/arm`
+- `Android/arm64`
+- `Android/x86`
+- `Android/x86_64`
 
-- Android/arm
-- Android/arm64
-- Android/x86
-- Android/x86_64
+
+## Differences between the old DNSCrypt Proxy Magisk project
+
+I dislike that other Magisk Android modules are hosted on Telegram, so I opened this project. It's beyond me why the magisk is been hosted via GitTea](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android), the original code is hosted on GitHub so should any other DNSCrypt-proxy related project (_my point of view_).
 
 
-## Differences between default DNSCrypt Proxy project
+##### dnscrypt-proxy.toml configurations file
 
-##### **- CONFIG. FILE:** *(dnscrypt-proxy.toml)*
-
-- ✅ `DNSSEC` required
+- ✅ `DNSSEC` is required
 - ✅ Enabled `dnscrypt_ephemeral_keys` feature *(create a new, unique key for every single DNS query)*
 - ✅ Enabled `anonymized_dns` feature *(each resolver has 2 relay)*
-- ⛔️ `DoH` disabled
-- ⛔️ `IPv6` disabled
+- ✅ Enabled `IPv6`, see [here](https://www.ripe.net/publications/news/about-ripe-ncc-and-ripe/the-ripe-ncc-has-run-out-of-ipv4-addresses) why
+- ⛔️ `DoH` disabled (due to [privacy concerns](https://github.com/CHEF-KOCH/FFCK/issues/7))
 - ℹ️ Set`refused` response to blocked queries
 - ℹ️ Set DNS query max. response time from `5000` to `1500`, in ms.
 - ℹ️ Use [UncensoredDNS](https://blog.uncensoreddns.org/) as fallback resolver instead CloudFlare
@@ -34,9 +46,9 @@ Up-to-date, pre-built binaries are available for:
 
 
 ## Installation
-1. Download latest `.zip` file from here or from [dnscrypt-proxy-android | CHANNEL](https://t.me/dnscrypt_proxy) on Telegram and flash it with Magisk Manager App or with your Recovery.
+1. Download latest `.zip` file from here or from  the [release channel](https://github.com/CHEF-KOCH/dnscrypt-proxy-android/releases) and flash it with Magisk Manager App or manually trough your TWRP recovery. You can also use GitHub's own "download" function to download the entire repository and flash it with your recovery.
 2. Reboot.
-3. Open AFWall+ and set custom script:
+3. (_optional_) Open [AFWall+](https://github.com/ukanth/afwall) and set (_via custom script_):
 
 **ENTER SCRIPT:**
 ```
@@ -59,10 +71,10 @@ iptables -t nat -D OUTPUT -p udp ! -d 91.239.100.100 --dport 53 -j DNAT --to-des
 
 ## Changelog
 
-[Full changelog](changelog.md)
+You can see the full changelog [here](changelog.md).
 
 
-## Credit
+## Credits
 - DNSCrypt-Proxy2 upstream | [jedisct1](https://github.com/jedisct1/dnscrypt-proxy)
-- [bluemeda](https://github.com/bluemeda) for the original module
-- [All contributors](https://github.com/Magisk-Modules-Repo/dnscrypt-proxy/graphs/contributors)
+- [bluemeda](https://github.com/bluemeda) for the original magisk module
+- [All contributors and authors from the old dnscrypt-module](https://github.com/Magisk-Modules-Repo/dnscrypt-proxy/graphs/contributors)

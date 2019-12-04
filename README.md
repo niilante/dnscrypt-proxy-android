@@ -13,6 +13,7 @@ The project aims to bring DNSCrypt-Proxyv2 to Android via [Magisk module](https:
  * [Installation](#installation)
    + [Configuration (post-installing)](#configuration--post-installing-)
  * [Changelog](#changelog)
+ * [Debug problems](#debug-problems)
  * [Credits](#credits)
 
 
@@ -39,7 +40,7 @@ Magisk itself does not support all (old) Android versions, and I also believe th
 
 ## Pre-built binaries
 
-Up-2-date, pre-built binaries are available for the following platforms:
+Up-2-date, [pre-built binaries](https://github.com/CHEF-KOCH/dnscrypt-proxy-android/tree/master/binary) are available for the following platforms:
 - `ARM`
 - `ARM64`
 - `x86`
@@ -94,6 +95,16 @@ ip6tables -t nat -D OUTPUT -p udp ! -d 2606:4700:4700::1111 --dport 53 -j DNAT -
 ## Changelog
 
 You can see the full changelog [here](changelog.md).
+
+
+## Debug problems
+
+Check (via terminal/termux) if DNSCrypt is working (active) `su dnscrypt-proxy --check`
+
+```bash
+su
+ps -A | grep dnscrypt-proxy
+```
 
 
 ## Credits

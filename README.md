@@ -1,5 +1,4 @@
 # DNSCrypt Proxy 2 for Android via Magisk
-
 The project aims to bring DNSCrypt-Proxyv2 to Android via [Magisk module](https://www.xda-developers.com/how-to-install-magisk/).
 
 ## Table of Contents
@@ -19,28 +18,23 @@ The project aims to bring DNSCrypt-Proxyv2 to Android via [Magisk module](https:
 
 
 ## What is DNSCrypt-Proxyv2 and why do I need it?!
-
-DNSCRypt-proxyv2 is a flexible DNS proxy, with support for modern encrypted DNS protocols such as [DNSCrypt v2](https://dnscrypt.info/protocol), [DNS-over-HTTPS](https://www.rfc-editor.org/rfc/rfc8484.txt) and [Anonymized DNSCrypt](https://github.com/DNSCrypt/dnscrypt-protocol/blob/master/ANONYMIZED-DNSCRYPT.txt).
+DNSCrypt-Proxyv2 is a flexible DNS proxy, with support for modern encrypted DNS protocols such as [DNSCrypt v2](https://dnscrypt.info/protocol), [DNS-over-HTTPS](https://www.rfc-editor.org/rfc/rfc8484.txt) and [Anonymized DNSCrypt](https://github.com/DNSCrypt/dnscrypt-protocol/blob/master/ANONYMIZED-DNSCRYPT.txt).
 
 
 ## DNSCrypt Features
-
 - [Please check the official page](https://github.com/DNSCrypt/dnscrypt-proxy#features) to see what DNSCrypt-Proxyv2 has to offer.
 - The project related DNSCrypt-Proxyv2 binaries are taken from the [official release page](https://github.com/jedisct1/dnscrypt-proxy/releases).
 
 
 ## Why aren't older Android versions supported?
-
 Magisk itself does not support all (old) Android versions, and I also believe that due to security and privacy reasons older Android versions should not be used anymore. However, you still can use and flash the module, but there will be no support from my side, there will be no support given for older Android versions!
 
 
 ## Donations
-
-**I do not accept donations** for this project, if you want to support someone, please [donate to the original DNSCrypt-Proxyv2 project](https://github.com/DNSCrypt/dnscrypt-proxy). This helps to keep DNSCrypt-Proxyv2 alive and push the project and the original developer.
+**I do not accept donations** for this project, if you want to support someone, please [donate to the original DNSCrypt-Proxyv2 project](https://github.com/DNSCrypt/dnscrypt-proxy). This helps to keep DNSCrypt-Proxyv2 alive and pushes the project.
 
 
 ## Pre-built binaries
-
 Up-2-date, [pre-built binaries](https://github.com/CHEF-KOCH/dnscrypt-proxy-android/tree/master/binary) are available for the following platforms:
 - `ARM`
 - `ARM64`
@@ -49,12 +43,10 @@ Up-2-date, [pre-built binaries](https://github.com/CHEF-KOCH/dnscrypt-proxy-andr
 
 
 ## Differences between the old DNSCrypt Proxy Magisk project
-
 I dislike that other Magisk Android modules are hosted on Telegram, so I opened this project. It's beyond me why the magisk is been hosted via [GitTea](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android), the original code is hosted on GitHub so should any other DNSCrypt-proxy related project (_my point of view_).
 
 
 ##### dnscrypt-proxy.toml configurations file
-
 - ✅ `DNSSEC` is required
 - ✅ Enabled `dnscrypt_ephemeral_keys` feature *(create a new, unique key for every single DNS query)*
 - ✅ Enabled `anonymized_dns` feature *(each resolver has 2 relay)*
@@ -107,7 +99,7 @@ You can see the full changelog [here](changelog.md).
 
 ## Debug problems
 
-Check (via terminal/termux) if DNSCrypt is working (active) `su dnscrypt-proxy --check`
+Check (via [terminal](https://www.techrepublic.com/article/how-to-get-a-linux-terminal-on-android/)/[termux](https://f-droid.org/en/packages/com.termux/)) if DNSCrypt is working (active) `su dnscrypt-proxy --check`
 
 ```bash
 su

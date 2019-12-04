@@ -58,11 +58,11 @@ I dislike that other Magisk Android modules are hosted on Telegram, so I opened 
 - ✅ Enabled `dnscrypt_ephemeral_keys` feature *(create a new, unique key for every single DNS query)*
 - ✅ Enabled `anonymized_dns` feature *(each resolver has 2 relay)*
 - ✅ Enabled `IPv6`, see [here](https://www.ripe.net/publications/news/about-ripe-ncc-and-ripe/the-ripe-ncc-has-run-out-of-ipv4-addresses) why
-- ⛔️ `DoH` disabled (due to [privacy concerns](https://github.com/CHEF-KOCH/FFCK/issues/7))
+- ⛔️ `DoH` is disabled (due to [privacy concerns](https://github.com/CHEF-KOCH/FFCK/issues/7))
 - ℹ️ Set`refused` response to blocked queries
-- ℹ️ Set DNS query max. response time from `5000` to `1500`, in ms.
-- ℹ️ Use [CleanBrowsing](https://cleanbrowsing.org/) as fallback resolver 
-- ℹ️ Use `dnscrypt.nl-ns0` (NL), `dnscrypt.uk-ipv4` (UK), `dnscrypt.eu-dk` (DK), `dnscrypt.eu-nl` (NL), `dnswarden-dc1` (DE), `dnswarden-dc1` (DE), `ibksturm` (CH), `publicarray-au` (AUS), `publicarray-au2` (AUS), `scaleway-fr` (FR) and `v.dnscrypt.uk-ipv4` (UK)
+- ℹ️ Set DNS query max. response time from `5000` to `4500`, in ms.
+- ℹ️ Set [CleanBrowsing](https://cleanbrowsing.org/) as fallback resolver 
+- ℹ️ Set `dnscrypt.nl-ns0` (NL), `dnscrypt.uk-ipv4` (UK), `dnscrypt.eu-dk` (DK), `dnscrypt.eu-nl` (NL), `dnswarden-dc1` (DE), `dnswarden-dc1` (DE), `ibksturm` (CH), `publicarray-au` (AUS), `publicarray-au2` (AUS), `scaleway-fr` (FR) and `v.dnscrypt.uk-ipv4` (UK)
 
 
 ## Installation
@@ -110,4 +110,5 @@ ps -A | grep dnscrypt-proxy
 ## Credits
 - DNSCrypt-Proxy2 , [jedisct1](https://github.com/jedisct1/dnscrypt-proxy)
 - [bluemeda](https://github.com/bluemeda) for the original magisk module
-- [All contributors and authors from the old dnscrypt-module](https://github.com/Magisk-Modules-Repo/dnscrypt-proxy/graphs/contributors)
+- [All contributors](https://github.com/Magisk-Modules-Repo/dnscrypt-proxy/graphs/contributors) and authors from the old dnscrypt-module
+- [All contributors as well as authors](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android) from the Gittea project

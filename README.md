@@ -15,7 +15,6 @@ The project aims to bring DNSCrypt-Proxyv2 to Android via [Magisk module](https:
  * [Changelog](#changelog)
  * [Credits](#credits)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## What is DNSCrypt-Proxyv2 and why do I need it?!
 
@@ -37,13 +36,14 @@ Magisk itself does not support all (old) Android versions, and I also believe th
 
 **I do not accept donations** for this project, if you want to support someone, please [donate to the original DNSCrypt-Proxyv2 project](https://github.com/DNSCrypt/dnscrypt-proxy). This helps to keep DNSCrypt-Proxyv2 alive and push the project and the original developer.
 
+
 ## Pre-built binaries
 
-Up-to-date, pre-built binaries are available for:
-- `Android/arm`
-- `Android/arm64`
-- `Android/x86`
-- `Android/x86_64`
+Up-2-date, pre-built binaries are available for the following platforms:
+- `ARM`
+- `ARM64`
+- `x86`
+- `x86_64`
 
 
 ## Differences between the old DNSCrypt Proxy Magisk project

@@ -73,9 +73,12 @@ I dislike that other Magisk Android modules are hosted on Telegram, so I opened 
 
 
 ### AFWall+ enforce a specific DNS server
-This is optional and in case you like to enforce a specific DNS server via [AFWall+](https://github.com/ukanth/afwall) and set (_via custom script, make sure the script uses [LF](https://stackoverflow.com/questions/1552749/difference-between-cr-lf-lf-and-cr-line-break-types) as line ending_):
+This is optional and in case you like to enforce a specific DNS server via [AFWall+](https://github.com/ukanth/afwall). You can add this via [custom script](https://github.com/ukanth/afwall/wiki/CustomScripts), this example uses [CleanBrowsing](https://en.wikipedia.org/wiki/CleanBrowsing) as DNS server.
 
-**ENTER SCRIPT:**
+**Warning**:
+Make sure the script uses [LF](https://stackoverflow.com/questions/1552749/difference-between-cr-lf-lf-and-cr-line-break-types) as line ending! And that you give AFWall+ the correct path to your script e.g. `. /data/local/shartupscript.sh` (_the space between . and / is mandatory!_).
+
+**Startup script:**
 ```
 iptables -t nat -A OUTPUT -p tcp ! -d 185.228.168.9 --dport 53 -j DNAT --to-destination 127.0.0.1:53
 iptables -t nat -A OUTPUT -p udp ! -d 185.228.168.9 --dport 53 -j DNAT --to-destination 127.0.0.1:53
@@ -83,7 +86,7 @@ ip6tables -t nat -A OUTPUT -p tcp ! -d 2a0d:2a00:1::2 --dport 53 -j DNAT --to-de
 ip6tables -t nat -A OUTPUT -p udp ! -d 2a0d:2a00:1::2 --dport 53 -j DNAT --to-destination [::1]:5354
 ```
    
-**SHUTDOWN SCRIPT:**
+**Shutdown script:**
 ```
 iptables -t nat -D OUTPUT -p tcp ! -d 185.228.168.9 --dport 53 -j DNAT --to-destination 127.0.0.1:53
 iptables -t nat -D OUTPUT -p udp ! -d 185.228.168.9 --dport 53 -j DNAT --to-destination 127.0.0.1:53

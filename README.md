@@ -8,10 +8,15 @@ The project aims to bring DNSCrypt-Proxyv2 to Android via [Magisk module](https:
 DNSCRypt-proxyv2 is a flexible DNS proxy, with support for modern encrypted DNS protocols such as [DNSCrypt v2](https://dnscrypt.info/protocol), [DNS-over-HTTPS](https://www.rfc-editor.org/rfc/rfc8484.txt) and [Anonymized DNSCrypt](https://github.com/DNSCrypt/dnscrypt-protocol/blob/master/ANONYMIZED-DNSCRYPT.txt).
 
 
-## Features
+## DNSCrypt Features
 
 - [Please check the official page](https://github.com/DNSCrypt/dnscrypt-proxy#features) to see what DNSCrypt-Proxyv2 has to offer.
 - The project related DNSCrypt-Proxyv2 binaries are taken from the [official release page](https://github.com/jedisct1/dnscrypt-proxy/releases).
+
+
+## Why aren't older Android versions supported?
+
+Magisk itself does not support all (old) Android versions, and I also believe that due to security and privacy reasons older Android versions should not be used anymore. However, you still can use and flash the module, but there will be no support from my side, there will be no support given for older Android versions!
 
 
 ## Donations

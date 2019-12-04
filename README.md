@@ -43,25 +43,25 @@ Up-2-date, [pre-built binaries](https://github.com/CHEF-KOCH/dnscrypt-proxy-andr
 
 
 ## Differences between the old DNSCrypt Proxy Magisk project
-I dislike that other Magisk Android modules are hosted on Telegram, so I opened this project. It's beyond me why the magisk is been hosted via [GitTea](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android), the original code is hosted on GitHub so should any other DNSCrypt-proxy related project (_my point of view_).
+I dislike that other Magisk Android modules are hosted on Telegram, so I opened this project. It's beyond me why the magisk version is been hosted via [GitTea](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android) because the original code is hosted on GitHub and so should any other DNSCrypt-proxy related project (_my point of view_).
 
 
 ##### dnscrypt-proxy.toml configurations file
 - ✅ `DNSSEC` is required
-- ✅ Enabled `dnscrypt_ephemeral_keys` feature *(create a new, unique key for every single DNS query)*
-- ✅ Enabled `anonymized_dns` feature *(each resolver has 2 relay)*
-- ✅ Enabled `IPv6`, see [here](https://www.ripe.net/publications/news/about-ripe-ncc-and-ripe/the-ripe-ncc-has-run-out-of-ipv4-addresses) why
-- ⛔️ `DoH` is disabled (due to [privacy concerns](https://github.com/CHEF-KOCH/FFCK/issues/7))
-- ℹ️ Set`refused` response to blocked queries
-- ℹ️ Set DNS query max. response time from `5000` to `4500`, in ms.
-- ℹ️ Set [CleanBrowsing](https://cleanbrowsing.org/) as fallback resolver 
-- ℹ️ Set `dnscrypt.nl-ns0` (NL), `dnscrypt.uk-ipv4` (UK), `dnscrypt.eu-dk` (DK), `dnscrypt.eu-nl` (NL), `dnswarden-dc1` (DE), `dnswarden-dc1` (DE), `ibksturm` (CH), `publicarray-au` (AUS), `publicarray-au2` (AUS), `scaleway-fr` (FR) and `v.dnscrypt.uk-ipv4` (UK)
+- ✅ `dnscrypt_ephemeral_keys` feature is enabled (_create a new, unique key for every single DNS query_)
+- ✅ `anonymized_dns` is enabled (_each resolver has 2 relay_)
+- ✅ `IPv6` is enabled, see [here](https://www.ripe.net/publications/news/about-ripe-ncc-and-ripe/the-ripe-ncc-has-run-out-of-ipv4-addresses) why
+- ⛔️ `DoH` is disabled, due to [privacy concerns](https://github.com/CHEF-KOCH/FFCK/issues/7)
+- ℹ️ `refused` is been set to respond to blocked queries
+- ℹ️ The DNS query max. response time was changed from `5000` to `4500` ms.
+- ℹ️ [CleanBrowsing](https://cleanbrowsing.org/) is been set as fallback resolver 
+- ℹ️ `dnscrypt.nl-ns0` (NL), `dnscrypt.uk-ipv4` (UK), `dnscrypt.eu-dk` (DK), `dnscrypt.eu-nl` (NL), `dnswarden-dc1` (DE), `dnswarden-dc1` (DE), `ibksturm` (CH), `publicarray-au` (AUS), `publicarray-au2` (AUS), `scaleway-fr` (FR) and `v.dnscrypt.uk-ipv4` (UK) are been used as default resolver, DNSCrypt-Proxyv2 typically chooses the fatest one.
 
 
 ## Installation
-1. Download latest `.zip` file from here or from  the [release channel](https://github.com/CHEF-KOCH/dnscrypt-proxy-android/releases) and flash it with Magisk Manager App or manually trough your TWRP recovery. You can also use GitHub's own "download" function to download the entire repository and flash it with your recovery.
-2. Reboot.
-3. Done
+1. Download latest `.zip` file from  the [release channel](https://github.com/CHEF-KOCH/dnscrypt-proxy-android/releases) and flash it with Magisk Manager App or manually trough your TWRP recovery. You can also use GitHub's own "download" function to download the whole repository and flash it.
+2. Reboot your device.
+3. That's it! Optionally you could change the `dnscrypt-proxy.toml` as per own needs.
 
 
 ### AFWall+ enforce a specific DNS server

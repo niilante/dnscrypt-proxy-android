@@ -11,6 +11,7 @@ The project aims to bring DNSCrypt-Proxyv2 to Android via [Magisk module](https:
  * [Differences between the old DNSCrypt Proxy Magisk project](#differences-between-the-old-dnscrypt-proxy-magisk-project)
        * [dnscrypt-proxy.toml configurations file](#dnscrypt-proxytoml-configurations-file)
  * [Installation](#installation)
+   + [AFWall+ enforce a specific DNS server](#afwall+-enforce-a-specific-dns-server)
    + [Configuration (post-installing)](#configuration--post-installing-)
  * [Changelog](#changelog)
  * [Debug problems](#debug-problems)
@@ -68,7 +69,11 @@ I dislike that other Magisk Android modules are hosted on Telegram, so I opened 
 ## Installation
 1. Download latest `.zip` file from here or from  the [release channel](https://github.com/CHEF-KOCH/dnscrypt-proxy-android/releases) and flash it with Magisk Manager App or manually trough your TWRP recovery. You can also use GitHub's own "download" function to download the entire repository and flash it with your recovery.
 2. Reboot.
-3. (_optional_) Open [AFWall+](https://github.com/ukanth/afwall) and set (_via custom script_):
+3. Done
+
+
+### AFWall+ enforce a specific DNS server
+This is optional and in case you like to enforce a specific DNS server via [AFWall+](https://github.com/ukanth/afwall) and set (_via custom script, make sure the script uses [LF](https://stackoverflow.com/questions/1552749/difference-between-cr-lf-lf-and-cr-line-break-types) as line ending_):
 
 **ENTER SCRIPT:**
 ```

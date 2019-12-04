@@ -32,12 +32,12 @@ server_names = ['dnscrypt.nl-ns0', 'dnscrypt.uk-ipv4', 'dnscrypt.eu-dk', 'dnscry
 
 ## List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.
 
-listen_addresses = ['127.0.0.1:53']
+listen_addresses = ['127.0.0.1:53', '[::1]:53']
 
 
 ## Maximum number of simultaneous client connections to accept
 
-max_clients = 250
+max_clients = 200
 
 
 ## Switch to a different system user after listening sockets have been created.
@@ -54,7 +54,7 @@ max_clients = 250
 ipv4_servers = true
 
 # Use servers reachable over IPv6 -- Do not enable if you don't have IPv6 connectivity
-ipv6_servers = false
+ipv6_servers = true
 
 # Use servers implementing the DNSCrypt protocol
 dnscrypt_servers = true
@@ -75,7 +75,7 @@ require_nolog = true
 require_nofilter = true
 
 # Server names to avoid even if they match all criteria
-disabled_server_names = []
+disabled_server_names = ['google', 'yandex']
 
 
 ## Always use TCP to connect to upstream servers.
@@ -105,12 +105,12 @@ force_tcp = false
 ## increase this. Startup may be slower if you do so.
 ## Don't increase it too much. 10000 is the highest reasonable value.
 
-timeout = 1500
+timeout = 4500
 
 
 ## Keepalive for HTTP (HTTPS, HTTP/2) queries, in seconds
 
-keepalive = 30
+keepalive = 48
 
 
 ## Response for blocked queries.  Options are `refused`, `hinfo` (default) or
@@ -138,12 +138,12 @@ blocked_query_response = 'refused'
 
 ## log file for the application
 
-# log_file = 'dnscrypt-proxy.log'
+log_file = 'dnscrypt-proxy.log'
 
 
 ## Use the system logger (syslog on Unix, Event Log on Windows)
 
-# use_syslog = true
+use_syslog = true
 
 
 ## Delay, in minutes, after which certificates are reloaded
@@ -178,7 +178,7 @@ dnscrypt_ephemeral_keys = true
 ## Keep tls_cipher_suite empty if you have issues fetching sources or
 ## connecting to some DoH servers. Google and Cloudflare are fine with it.
 
-# tls_cipher_suite = [52392, 49199]
+tls_cipher_suite = [52392, 49199]
 
 
 ## Fallback resolver
@@ -195,7 +195,7 @@ dnscrypt_ephemeral_keys = true
 ## People in China may need to use 114.114.114.114:53 here.
 ## Other popular options include 8.8.8.8 and 1.1.1.1.
 
-fallback_resolver = '91.239.100.100:53'
+fallback_resolver = '185.228.168.168:53'
 
 
 ## Always use the fallback resolver before the system DNS settings
@@ -221,7 +221,7 @@ netprobe_timeout = -1
 ## On other operating systems, the connection will be initialized
 ## but nothing will be sent at all.
 
-netprobe_address = '91.239.100.100:53'
+netprobe_address = '185.228.168.168:53'
 
 
 ## Offline mode - Do not use any remote encrypted servers.
@@ -242,7 +242,7 @@ netprobe_address = '91.239.100.100:53'
 ## Automatic log files rotation
 
 # Maximum log files size in MB - Set to 0 for unlimited.
-log_files_max_size = 10
+log_files_max_size = 6
 
 # How long to keep backup files, in days
 log_files_max_age = 7
@@ -262,7 +262,7 @@ log_files_max_backups = 1
 ## Do not enable if you added a validating resolver such as dnsmasq in front
 ## of the proxy.
 
-block_ipv6 = true
+block_ipv6 = false
 
 
 ## TTL for synthetic responses sent when a request has been blocked (due to
@@ -280,7 +280,7 @@ reject_ttl = 600
 ## example.com 9.9.9.9
 ## example.net 9.9.9.9,8.8.8.8,1.1.1.1
 
-# forwarding_rules = 'forwarding-rules.txt'
+forwarding_rules = 'forwarding-rules.txt'
 
 
 
@@ -296,11 +296,11 @@ reject_ttl = 600
 ## example.com     10.1.1.1
 ## www.google.com  forcesafesearch.google.com
 
-# cloaking_rules = 'cloaking-rules.txt'
+cloaking_rules = 'cloaking-rules.txt'
 
 ## TTL used when serving entries in cloaking-rules.txt
 
-# cloak_ttl = 600
+cloak_ttl = 600
 
 
 ###########################
@@ -349,7 +349,7 @@ cache_neg_max_ttl = 600
   ## Path to the query log file (absolute, or relative to the same directory as the executable file)
   ## Can be /dev/stdout to log to the standard output (and set log_files_max_size to 0)
 
-  # file = 'query.log'
+  file = '/data/media/0/dnscrypt-proxy/query.log'
 
 
   ## Query log format (currently supported: tsv and ltsv)
@@ -359,7 +359,7 @@ cache_neg_max_ttl = 600
 
   ## Do not log these query types, to reduce verbosity. Keep empty to log everything.
 
-  # ignored_qtypes = ['DNSKEY', 'NS']
+  ignored_qtypes = ['DNSKEY', 'NS']
 
 
 
@@ -375,7 +375,7 @@ cache_neg_max_ttl = 600
 
   ## Path to the query log file (absolute, or relative to the same directory as the executable file)
 
-  # file = 'nx.log'
+  file = '/data/media/0/dnscrypt-proxy/nx.log'
 
 
   ## Query log format (currently supported: tsv and ltsv)
@@ -405,17 +405,17 @@ cache_neg_max_ttl = 600
 
   ## Path to the file of blocking rules (absolute, or relative to the same directory as the executable file)
 
-  blacklist_file = 'blacklist.txt'
+  blacklist_file = '/data/media/0/dnscrypt-proxy/blacklist.txt'
 
 
   ## Optional path to a file logging blocked queries
 
-  # log_file = 'blocked.log'
+  log_file = '/data/media/0/dnscrypt-proxy/blocked.log'
 
 
   ## Optional log format: tsv or ltsv (default: tsv)
 
-  # log_format = 'tsv'
+  log_format = 'tsv'
 
 
 
@@ -433,17 +433,17 @@ cache_neg_max_ttl = 600
 
   ## Path to the file of blocking rules (absolute, or relative to the same directory as the executable file)
 
-  # blacklist_file = 'ip-blacklist.txt'
+  blacklist_file = '/data/media/0/dnscrypt-proxy/ip-blacklist.txt'
 
 
   ## Optional path to a file logging blocked queries
 
-  # log_file = 'ip-blocked.log'
+  log_file = '/data/media/0/dnscrypt-proxy/ip-blocked.log'
 
 
   ## Optional log format: tsv or ltsv (default: tsv)
 
-  # log_format = 'tsv'
+  log_format = 'tsv'
 
 
 
@@ -461,17 +461,17 @@ cache_neg_max_ttl = 600
 
   ## Path to the file of whitelisting rules (absolute, or relative to the same directory as the executable file)
 
-  # whitelist_file = 'whitelist.txt'
+  whitelist_file = '/data/media/0/dnscrypt-proxy/whitelist.txt'
 
 
   ## Optional path to a file logging whitelisted queries
 
-  # log_file = 'whitelisted.log'
+  log_file = '/data/media/0/dnscrypt-proxy/whitelisted.log'
 
 
   ## Optional log format: tsv or ltsv (default: tsv)
 
-  # log_format = 'tsv'
+  log_format = 'tsv'
 
 
 

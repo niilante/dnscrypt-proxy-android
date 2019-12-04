@@ -29,7 +29,7 @@ Up-to-date, pre-built binaries are available for:
 
 ## Differences between the old DNSCrypt Proxy Magisk project
 
-I dislike that other Magisk Android modules are hosted on Telegram, so I opened this project. It's beyond me why the magisk is been hosted via GitTea](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android), the original code is hosted on GitHub so should any other DNSCrypt-proxy related project (_my point of view_).
+I dislike that other Magisk Android modules are hosted on Telegram, so I opened this project. It's beyond me why the magisk is been hosted via [GitTea](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android), the original code is hosted on GitHub so should any other DNSCrypt-proxy related project (_my point of view_).
 
 
 ##### dnscrypt-proxy.toml configurations file
@@ -52,14 +52,18 @@ I dislike that other Magisk Android modules are hosted on Telegram, so I opened 
 
 **ENTER SCRIPT:**
 ```
-iptables -t nat -A OUTPUT -p tcp ! -d 91.239.100.100 --dport 53 -j DNAT --to-destination 127.0.0.1:53
-iptables -t nat -A OUTPUT -p udp ! -d 91.239.100.100 --dport 53 -j DNAT --to-destination 127.0.0.1:53
+iptables -t nat -A OUTPUT -p tcp ! -d 1.1.1.1 --dport 53 -j DNAT --to-destination 127.0.0.1:53
+iptables -t nat -A OUTPUT -p udp ! -d 1.1.1.1 --dport 53 -j DNAT --to-destination 127.0.0.1:53
+ip6tables -t nat -A OUTPUT -p tcp ! -d 2606:4700:4700::1111 --dport 53 -j DNAT --to-destination [::1]:5354
+ip6tables -t nat -A OUTPUT -p udp ! -d 2606:4700:4700::1111 --dport 53 -j DNAT --to-destination [::1]:5354
 ```
    
 **SHUTDOWN SCRIPT:**
 ```
-iptables -t nat -D OUTPUT -p tcp ! -d 91.239.100.100 --dport 53 -j DNAT --to-destination 127.0.0.1:53
-iptables -t nat -D OUTPUT -p udp ! -d 91.239.100.100 --dport 53 -j DNAT --to-destination 127.0.0.1:53
+iptables -t nat -D OUTPUT -p tcp ! -d 1.1.1.1 --dport 53 -j DNAT --to-destination 127.0.0.1:53
+iptables -t nat -D OUTPUT -p udp ! -d 1.1.1.1 --dport 53 -j DNAT --to-destination 127.0.0.1:53
+ip6tables -t nat -D OUTPUT -p tcp ! -d 2606:4700:4700::1111 --dport 53 -j DNAT --to-destination [::1]:5354
+ip6tables -t nat -D OUTPUT -p udp ! -d 2606:4700:4700::1111 --dport 53 -j DNAT --to-destination [::1]:5354
 ```
 
 ### Configuration (post-installing)

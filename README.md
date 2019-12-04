@@ -41,7 +41,7 @@ I dislike that other Magisk Android modules are hosted on Telegram, so I opened 
 - ⛔️ `DoH` disabled (due to [privacy concerns](https://github.com/CHEF-KOCH/FFCK/issues/7))
 - ℹ️ Set`refused` response to blocked queries
 - ℹ️ Set DNS query max. response time from `5000` to `1500`, in ms.
-- ℹ️ Use [UncensoredDNS](https://blog.uncensoreddns.org/) as fallback resolver instead CloudFlare
+- ℹ️ Use [CleanBrowsing](https://cleanbrowsing.org/) as fallback resolver 
 - ℹ️ Use `dnscrypt.nl-ns0` (NL), `dnscrypt.uk-ipv4` (UK), `dnscrypt.eu-dk` (DK), `dnscrypt.eu-nl` (NL), `dnswarden-dc1` (DE), `dnswarden-dc1` (DE), `ibksturm` (CH), `publicarray-au` (AUS), `publicarray-au2` (AUS), `scaleway-fr` (FR) and `v.dnscrypt.uk-ipv4` (UK)
 
 

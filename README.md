@@ -77,18 +77,18 @@ This is optional and in case you like to enforce a specific DNS server via [AFWa
 
 **ENTER SCRIPT:**
 ```
-iptables -t nat -A OUTPUT -p tcp ! -d 1.1.1.1 --dport 53 -j DNAT --to-destination 127.0.0.1:53
-iptables -t nat -A OUTPUT -p udp ! -d 1.1.1.1 --dport 53 -j DNAT --to-destination 127.0.0.1:53
-ip6tables -t nat -A OUTPUT -p tcp ! -d 2606:4700:4700::1111 --dport 53 -j DNAT --to-destination [::1]:5354
-ip6tables -t nat -A OUTPUT -p udp ! -d 2606:4700:4700::1111 --dport 53 -j DNAT --to-destination [::1]:5354
+iptables -t nat -A OUTPUT -p tcp ! -d 185.228.168.9 --dport 53 -j DNAT --to-destination 127.0.0.1:53
+iptables -t nat -A OUTPUT -p udp ! -d 185.228.168.9 --dport 53 -j DNAT --to-destination 127.0.0.1:53
+ip6tables -t nat -A OUTPUT -p tcp ! -d 2a0d:2a00:1::2 --dport 53 -j DNAT --to-destination [::1]:5354
+ip6tables -t nat -A OUTPUT -p udp ! -d 2a0d:2a00:1::2 --dport 53 -j DNAT --to-destination [::1]:5354
 ```
    
 **SHUTDOWN SCRIPT:**
 ```
-iptables -t nat -D OUTPUT -p tcp ! -d 1.1.1.1 --dport 53 -j DNAT --to-destination 127.0.0.1:53
-iptables -t nat -D OUTPUT -p udp ! -d 1.1.1.1 --dport 53 -j DNAT --to-destination 127.0.0.1:53
-ip6tables -t nat -D OUTPUT -p tcp ! -d 2606:4700:4700::1111 --dport 53 -j DNAT --to-destination [::1]:5354
-ip6tables -t nat -D OUTPUT -p udp ! -d 2606:4700:4700::1111 --dport 53 -j DNAT --to-destination [::1]:5354
+iptables -t nat -D OUTPUT -p tcp ! -d 185.228.168.9 --dport 53 -j DNAT --to-destination 127.0.0.1:53
+iptables -t nat -D OUTPUT -p udp ! -d 185.228.168.9 --dport 53 -j DNAT --to-destination 127.0.0.1:53
+ip6tables -t nat -D OUTPUT -p tcp ! -d 2a0d:2a00:1::2 --dport 53 -j DNAT --to-destination [::1]:5354
+ip6tables -t nat -D OUTPUT -p udp ! -d 2a0d:2a00:1::2 --dport 53 -j DNAT --to-destination [::1]:5354
 ```
 
 ### Configuration (post-installing)

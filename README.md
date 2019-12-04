@@ -68,9 +68,8 @@ ip6tables -t nat -D OUTPUT -p udp ! -d 2606:4700:4700::1111 --dport 53 -j DNAT -
 
 ### Configuration (post-installing)
 
-- You can edit `dnscrypt-proxy.toml` as you wish located on `/sdcard/dnscrypt-proxy/dnscrypt-proxy.toml` [or /data/media/0/dnscrypt-proxy/dnscrypt-proxy.toml]
-- For more detailed configuration please refer to [official documentation](https://github.com/jedisct1/dnscrypt-proxy/wiki/Configuration)
-- FOR MORE SUPPORT ON A GOOD PRIVACY-ORIENTED SETUP, JOIN [dnscrypt-proxy-android | CHAT](https://t.me/qd_invitation) ON TELEGRAM
+- You can manually edit `dnscrypt-proxy.toml` as you wish located on `/sdcard/dnscrypt-proxy/dnscrypt-proxy.toml` or `/data/media/0/dnscrypt-proxy/dnscrypt-proxy.toml` to change DNSCryp-Proxyv2 settings.
+- For more in-depth explanation please check the [official documentation](https://github.com/jedisct1/dnscrypt-proxy/wiki/Configuration).
 
 
 ## Changelog
@@ -79,6 +78,6 @@ You can see the full changelog [here](changelog.md).
 
 
 ## Credits
-- DNSCrypt-Proxy2 upstream | [jedisct1](https://github.com/jedisct1/dnscrypt-proxy)
+- DNSCrypt-Proxy2 , [jedisct1](https://github.com/jedisct1/dnscrypt-proxy)
 - [bluemeda](https://github.com/bluemeda) for the original magisk module
 - [All contributors and authors from the old dnscrypt-module](https://github.com/Magisk-Modules-Repo/dnscrypt-proxy/graphs/contributors)

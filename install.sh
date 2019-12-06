@@ -1,6 +1,6 @@
 ##########################################################################################
 #
-# Magisk Module Installer Script original provided by quindecim 
+# Magisk Module Installer Script original provided by quindecim
 # Maintainer: CHEF-KOCH
 #
 ##########################################################################################
@@ -124,9 +124,9 @@ REPLACE="
 
 print_modname() {
   ui_print " "
-  ui_print "******************************"
-  ui_print "*   dnscrypt-proxy-android   *"
-  ui_print "******************************"
+  ui_print "************************************"
+  ui_print "*   DNSCrypt-proxyv2 for Android   *"
+  ui_print "************************************"
   ui_print " "
 }
 
@@ -137,18 +137,21 @@ on_install() {
   # Extend/change the logic to whatever you want
 
   if [ "$ARCH" == "arm" ];then
-    BINARY_PATH=$TMPDIR/binary/dnscrypt-proxy-arm
+    BINARY_PATH=$TMPDIR/binaries/dnscrypt-proxy-arm
   elif [ "$ARCH" == "arm64" ];then
-    BINARY_PATH=$TMPDIR/binary/dnscrypt-proxy-arm64
+    BINARY_PATH=$TMPDIR/binaries/dnscrypt-proxy-arm64
   elif [ "$ARCH" == "x86" ];then
-    BINARY_PATH=$TMPDIR/binary/dnscrypt-proxy-x86
+    BINARY_PATH=$TMPDIR/binaries/dnscrypt-proxy-x86
   elif [ "$ARCH" == "x64" ];then
-    BINARY_PATH=$TMPDIR/binary/dnscrypt-proxy-x86_64
+    BINARY_PATH=$TMPDIR/binaries/dnscrypt-proxy-x86_64
   fi
 
-  CONFIG_PATH=$TMPDIR/config
+  # Set default configs and DCP path
+  CONFIG_PATH=$TMPDIR/configs
+  DCP_PATH=$TMPDIR/binaries/dcp
+  
 
-  unzip -o "$ZIPFILE" 'config/*' 'binary/*' -d $TMPDIR
+  unzip -o "$ZIPFILE" 'configs/*' 'binaries/*' -d $TMPDIR
 
   ui_print "* Creating binary path"
   mkdir -p $MODPATH/system/bin
@@ -157,14 +160,15 @@ on_install() {
   mkdir -p /data/media/0/dnscrypt-proxy
 
   if [ -f "$BINARY_PATH" ]; then
-    ui_print "* Copying binary for $ARCH"
+    ui_print "* Copying binaries"
     cp -af $BINARY_PATH $MODPATH/system/bin/dnscrypt-proxy
+    cp -af $DCP_PATH $MODPATH/system/bin/dcp
   else
     abort "Binary file for $ARCH is missing!"
   fi
 
   if [ -d "$CONFIG_PATH" ]; then
-    ui_print "* Copying example and license files"
+    ui_print "* Copying example configuration files and license"
     cp -af $CONFIG_PATH/* /data/media/0/dnscrypt-proxy/
   else
     abort "Config file is missing!"
@@ -180,14 +184,11 @@ on_install() {
 
 
 set_permissions() {
-  # The following is the default rule, DO NOT remove
+  # The following is the default permission rule
+  # DO NOT remove!
   set_perm_recursive $MODPATH 0 0 0755 0644
   set_perm $MODPATH/system/bin/dnscrypt-proxy 0 0 0755
-  # Here are some examples:
-  # set_perm_recursive  $MODPATH/system/lib       0     0       0755      0644
-  # set_perm  $MODPATH/system/bin/app_process32   0     2000    0755      u:object_r:zygote_exec:s0
-  # set_perm  $MODPATH/system/bin/dex2oat         0     2000    0755      u:object_r:dex2oat_exec:s0
-  # set_perm  $MODPATH/system/lib/libart.so       0     0       0644
+  set_perm $MODPATH/system/bin/dcp 0 0 0755
 }
 
 # You can add more functions to assist your custom script code

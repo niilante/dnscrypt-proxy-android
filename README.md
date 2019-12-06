@@ -111,5 +111,6 @@ ps -A | grep dnscrypt-proxy
 - [jedisct1](https://github.com/jedisct1/dnscrypt-proxy) for his DNSCrypt-Proxy2 project
 - [topjohnwu](https://github.com/topjohnwu) for his Magisk project
 - [bluemeda](https://github.com/bluemeda) for the original magisk module
+- [adit](https://github.com/adit) for his dcp 
 - [All contributors](https://github.com/Magisk-Modules-Repo/dnscrypt-proxy/graphs/contributors) and authors from the old dnscrypt-module
 - [All contributors as well as authors](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android) from the Gittea project

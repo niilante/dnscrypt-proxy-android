@@ -1,5 +1,13 @@
 # Change log
 
+## 2.0.35
+* Renamed "binary" folder to "binaries"
+* Renamed "config" folder to "configs"
+* Configuration updated
+* iptables script fixed
+* Updated binary & configuration files to [2.0.35](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.35)
+
+
 ## 2.0.34
 * Enabled IPv6 (_it gets ignored if you're provider doesn't support IPv6_)
 * Updated binary & configuration files to [2.0.34](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.34)

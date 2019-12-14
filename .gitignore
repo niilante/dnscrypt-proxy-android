@@ -1,3 +1,16 @@
+### DNSCrypt-proxy specific
+*.dylib
+*.exe
+*.out
+*.so
+*.swp
+dnscrypt-proxy/dnscrypt-proxy2
+dnscrypt-proxy/dnscrypt-proxy
+build/**
+
+### Tests
+*.test
+
 ### Markdown
 *.md
 README.txt
@@ -131,6 +144,7 @@ atlassian-ide-plugin.xml
 
 # Mongo Explorer plugin
 .idea/mongoSettings.xml
+.idea
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml

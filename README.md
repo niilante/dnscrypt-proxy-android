@@ -55,7 +55,7 @@ I dislike that other Magisk Android modules are hosted on Telegram, so I opened 
 - ℹ️ `refused` is been set to respond to blocked queries
 - ℹ️ The DNS query max. response time was changed from `5000` to `4500` ms.
 - ℹ️ [CleanBrowsing](https://cleanbrowsing.org/) is been set as fallback resolver 
-- ℹ️ `dnscrypt.nl-ns0` (NL), `dnscrypt.uk-ipv4` (UK), `dnscrypt.eu-dk` (DK), `dnscrypt.eu-nl` (NL), `dnswarden-dc1` (DE), `dnswarden-dc1` (DE), `ibksturm` (CH), `publicarray-au` (AUS), `publicarray-au2` (AUS), `scaleway-fr` (FR) and `v.dnscrypt.uk-ipv4` (UK) are been used as default resolver, DNSCrypt-Proxyv2 typically chooses the fatest one.
+- ℹ️ Use `dnscrypt.nl-ns0` (NL), `dnscrypt.uk-ipv4` (UK), `dnscrypt.eu-dk` (DK), `dnscrypt.eu-nl` (NL), `dnswarden-dc1` (DE), `dnswarden-dc1` (DE), `ffmuc.net` (DE), `ibksturm` (CH), `publicarray-au` (AUS), `publicarray-au2` (AUS), `scaleway-ams` (NL), `scaleway-fr` (FR) and `v.dnscrypt.uk-ipv4` (UK)
 
 
 ## Installation

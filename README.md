@@ -55,11 +55,11 @@ I dislike that other Magisk Android modules are hosted on Telegram, so I opened 
 - ℹ️ `refused` is been set to respond to blocked queries
 - ℹ️ The DNS query max. response time was changed from `5000` to `4500` ms.
 - ℹ️ [CleanBrowsing](https://cleanbrowsing.org/) is been set as fallback resolver 
-- ℹ️ Use `dnscrypt.nl-ns0` (NL), `dnscrypt.uk-ipv4` (UK), `dnscrypt.eu-dk` (DK), `dnscrypt.eu-nl` (NL), `dnswarden-dc1` (DE), `dnswarden-dc1` (DE), `ffmuc.net` (DE), `ibksturm` (CH), `publicarray-au` (AUS), `publicarray-au2` (AUS), `scaleway-ams` (NL), `scaleway-fr` (FR) and `v.dnscrypt.uk-ipv4` (UK)
+- ℹ️ The configuration uses `dnscrypt.nl-ns0` (NL), `dnscrypt.eu-dk` (DK), `dnscrypt.eu-nl` (NL), `dnswarden-dc1` (DE), `dnswarden-dc1` (DE), `ffmuc.net` (DE), `ibksturm` (CH), `publicarray-au` (AUS), `publicarray-au2` (AUS), `scaleway-ams` (NL), `scaleway-fr` (FR) and `v.dnscrypt.uk-ipv4` (UK)
 
 
 ## Installation
-1. Download latest `.zip` file from  the [release channel](https://github.com/CHEF-KOCH/dnscrypt-proxy-android/releases, now repack it with the module files in the root of the zip rather then the directory.
+1. Download latest `.zip` file from  the [release channel](https://github.com/CHEF-KOCH/dnscrypt-proxy-android/releases), now repack it with the module files in the root of the zip rather then the directory.
 2. Flash the module via Magisk Manager (_the big plus + button_) and wait until the flash process is done.
 2. Reboot your device afterwards.
 3. That's it! Optionally you could change the `dnscrypt-proxy.toml` as per own needs.

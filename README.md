@@ -59,6 +59,9 @@ I dislike that other Magisk Android modules are hosted on Telegram, so I opened 
 
 
 ## Installation
+![This is how you pack a release](https://user-images.githubusercontent.com/727123/71154349-3c62b600-2233-11ea-878d-5d3a3decfdf0.png "Logo Title Text 1")
+
+
 1. Download latest `.zip` file from  the [release channel](https://github.com/CHEF-KOCH/dnscrypt-proxy-android/releases), now repack it with the module files in the root of the zip rather then the directory.
 2. Flash the module via Magisk Manager (_the big plus + button_) and wait until the flash process is done.
 2. Reboot your device afterwards.

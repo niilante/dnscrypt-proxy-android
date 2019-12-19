@@ -101,7 +101,7 @@ ip6tables -t nat -D OUTPUT -p udp ! -d 2a0d:2a00:1::2 --dport 53 -j DNAT --to-de
 You can see the full changelog [here](changelog.md).
 
 
-## Debug problems
+## Debugging problems
 
 Check (via [terminal](https://www.techrepublic.com/article/how-to-get-a-linux-terminal-on-android/)/[termux](https://f-droid.org/en/packages/com.termux/)) if DNSCrypt is working (active) `su dnscrypt-proxy --check`
 
@@ -111,6 +111,11 @@ ps -A | grep dnscrypt-proxy
 ```
 
 
+## To complicated I need an app!
+
+There is an app which brings everything together, DNSCrypt-Proxy, Tor and I2P, it's called [InviZible Pro](https://invizible.net/en/). It's written by Garmatin Oleksandr and uses the official libs from the offical mentioned projects, it includes some "tweaked" integrated configuration settings (e.g. for ads filter [blacklist]) , which you can review and change within the app.
+
+
 ## Credits
 - [jedisct1](https://github.com/jedisct1/dnscrypt-proxy) for his DNSCrypt-Proxy2 project
 - [topjohnwu](https://github.com/topjohnwu) for his Magisk project
@@ -118,3 +123,4 @@ ps -A | grep dnscrypt-proxy
 - [adit](https://github.com/adit) for his dcp 
 - [All contributors](https://github.com/Magisk-Modules-Repo/dnscrypt-proxy/graphs/contributors) and authors from the old dnscrypt-module
 - [All contributors as well as authors](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android) from the Gittea project
+- [Garmatin Oleksandr for InviZible Pro](https://github.com/Gedsh/InviZible) [F-Droid](https://apt.izzysoft.de/fdroid/index/apk/pan.alexander.tordnscrypt)

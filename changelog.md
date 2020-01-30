@@ -1,7 +1,7 @@
 # Change log
 
 ## 2.0.37
-* Updated binary files to 2.0.34 | jedisct1
+* Updated binary files to [2.0.37](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.37) | jedisct1
 
 
 ## 2.0.35

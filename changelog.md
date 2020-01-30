@@ -1,5 +1,9 @@
 # Change log
 
+## 2.0.37
+* Updated binary files to 2.0.34 | jedisct1
+
+
 ## 2.0.35
 * Renamed "binary" folder to "binaries"
 * Renamed "config" folder to "configs"

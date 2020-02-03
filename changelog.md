@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.39
+* Updated binary files to [2.0.39](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.39) | jedisct1
+
+
 ## 2.0.38
 * Updated binary files to [2.0.38](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.38) | jedisct1
 
@@ -23,7 +27,7 @@
 * Readme.md and Changelog.md changes
 
 
-# OLD project Change log
+# OLD project changelog
 
 ## 2.0.34
 

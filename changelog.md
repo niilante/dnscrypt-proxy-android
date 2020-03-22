@@ -1,8 +1,7 @@
 # Changelog
 
 ## 2.0.40
-Updated binary files to [2.0.39](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.39) | jedisct1
-
+Updated binary files to [2.0.39](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.40) by jedisct1
 
 * Servers blocking fragmented queries are now automatically detected.
 * The server name is now only present in query logs when an actual upstream servers was required to resolve a query.
@@ -11,6 +10,7 @@ Updated binary files to [2.0.39](https://github.com/DNSCrypt/dnscrypt-proxy/rele
 * DoH RTT computation is now more accurate, especially when CDNs are in the middle.
 * The forwarding plugin is now more reliable, and handles retries over TCP.
 
+* ✅ Config updated
 
 ## 2.0.39
 * Updated binary files to [2.0.39](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.39) | jedisct1
@@ -53,7 +53,7 @@ your DNS proxy.
 #### Updated config files to 2.0.34 | quindecim
 * ✅ Added `ibksturm` - dnscrypt-server (nginx - encrypted-dns - unbound backend), DNSSEC / Non-Logged / Uncensored, OpenNIC and Root DNS-Zone - Hosted in Switzerland by ibksturm, aka Andreas Ziegler)
 * ✅ Enabled `blacklist.txt` file to prevent `CNAME Cloaking` tracking feature
-* ✅ Optimized relays based on geolocation
+* ✅ Optimized relays based on geolocation.
 * ⛔️ Removed `charis` and `suami` resolvers and their relays
 
 

@@ -1,7 +1,14 @@
 # Changelog
 
+## 2.0.41
+Updated binary files to [2.0.41](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.41) by jedisct1
+
+* Precompiled ARM binaries are compatible with armv5 CPUs. The default arm builds were not compatible with older CPUs when compiled with Go 1.14. mips64 binaries are explicitly compiled with softfloat to improve compatibility.
+* Quad9 seems to be only blocking fragmented queries over UDP for some networks. They have been removed from the default list of broken resolvers; runtime detection of support for fragments should now do the job.
+* Runtime detection of support for fragments was actually enabled.
+
 ## 2.0.40
-Updated binary files to [2.0.39](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.40) by jedisct1
+Updated binary files to [2.0.40](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.40) by jedisct1
 
 * Servers blocking fragmented queries are now automatically detected.
 * The server name is now only present in query logs when an actual upstream servers was required to resolve a query.

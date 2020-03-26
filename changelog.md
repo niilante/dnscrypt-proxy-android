@@ -1,11 +1,22 @@
 # Changelog
 
+## 2.0.42
+Updated binary files to [2.0.42](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.42) by jedisct1
+
+* The current versions of the `dnsdist` load balancer (presumably used by quad9, cleanbrowsing, qualityology, freetsa.org, ffmuc.net, opennic-bongobow, sth-dnscrypt-se, ams-dnscrypt-nl and more) is preventing queries over 1500 bytes from being received over UDP.
+Temporary workarounds have been introduced to improve reliability with these resolvers for regular DNSCrypt. Unfortunately, anonymized DNS cannot be reliable until the issue is fixed server-side. `dnsdist` authors are aware of it and ~~are working on a fix~~ [already have a fix](https://github.com/rgacogne/pdns/commit/0e214db287e6952b61b78d3e1fd4328403686fc6).
+New option in the `[anonymized_dns]` section: `skip_incompatible`, to ignore resolvers incompatible with Anonymized DNS instead of using them without a relay.
+* The server latency benchmark is faster while being able to perform more retries if necessary.
+* Continuous integration has been moved to GitHub Actions.
+
+
 ## 2.0.41
 Updated binary files to [2.0.41](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.41) by jedisct1
 
 * Precompiled ARM binaries are compatible with armv5 CPUs. The default arm builds were not compatible with older CPUs when compiled with Go 1.14. mips64 binaries are explicitly compiled with softfloat to improve compatibility.
 * Quad9 seems to be only blocking fragmented queries over UDP for some networks. They have been removed from the default list of broken resolvers; runtime detection of support for fragments should now do the job.
 * Runtime detection of support for fragments was actually enabled.
+
 
 ## 2.0.40
 Updated binary files to [2.0.40](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.40) by jedisct1
@@ -18,6 +29,7 @@ Updated binary files to [2.0.40](https://github.com/DNSCrypt/dnscrypt-proxy/rele
 * The forwarding plugin is now more reliable, and handles retries over TCP.
 
 * ✅ Config updated
+
 
 ## 2.0.39
 * Updated binary files to [2.0.39](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.39) | jedisct1
@@ -93,7 +105,7 @@ but it includes a `SERVFAIL` error code).
 
 #### Updated config files to 2.0.33 | quindecim
 * ✅ Added `v.dnscrypt.uk-ipv4` - DNSCrypt v2, no logs, uncensored, DNSSEC. Hosted in London UK on Vultr - https://www.dnscrypt.uk
-* ✅ Optimized relays based on geolocation and set to use other providers different from the main one 
+* ✅ Optimized relays based on geolocation and set to use other providers different from the main one
 
 
 ## 2.0.31

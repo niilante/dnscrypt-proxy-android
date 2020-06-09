@@ -1,11 +1,36 @@
 # Changelog
 
+## 2.0.43
+
+##### Updated binary files to [2.0.43]((https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.43) by jedisct1
+- Built-in support for DNS64 translation has been implemented. (Contributed by Sergey Smirnov, thanks!)
+- Connections to DoH servers can be authenticated using TLS client certificates (Contributed by Kevin O'Sullivan, thanks!)
+- Multiple stamps are now allowed for a single server in resolvers and relays lists.
+- Android: the time zone for log files is now set to the system time zone.
+- Quite a lot of updates and additions have been made to the example domain block lists. Thanks to `IceCodeNew`!
+- Cached configuration files can now be temporarily used if they are out of date, but bootstraping is impossible. Contributed by
+`lifenjoiner`, thanks!
+- Precompiled macOS binaries are now notarized.
+- `generate-domains-blacklists` now tries to deduplicate entries clobbered by wildcard rules. Thanks to `Huhni`!
+- `generate-domains-blacklists` can now directly write lists to a file with the `-o` command-line option.
+- cache files are now downloaded as the user the daemon will be running as. This fixes permission issues at startup time.
+- Forwarded queries are now subject to global timeouts, and can be
+forced to use TCP.
+- The `ct` parameter has been removed from DoH queries, as Google doesn't require it any more.
+- Service installation is now supported on FreeBSD.
+- When stored into a file, service logs now only contain data from the most recent launch. This can be changed with the new `log_file_latest` option.
+
+##### Updated config files to 2.0.43
+- ✅ Added `Applied Privacy DNS` and `NixNet DNS` as additional fallback resolvers.
+- ℹ️ Requires `Magisk 20+` from now on.
+
+
 ## 2.0.42
 Updated binary files to [2.0.42](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.42) by jedisct1
 
 * The current versions of the `dnsdist` load balancer (presumably used by quad9, cleanbrowsing, qualityology, freetsa.org, ffmuc.net, opennic-bongobow, sth-dnscrypt-se, ams-dnscrypt-nl and more) is preventing queries over 1500 bytes from being received over UDP.
 Temporary workarounds have been introduced to improve reliability with these resolvers for regular DNSCrypt. Unfortunately, anonymized DNS cannot be reliable until the issue is fixed server-side. `dnsdist` authors are aware of it and ~~are working on a fix~~ [already have a fix](https://github.com/rgacogne/pdns/commit/0e214db287e6952b61b78d3e1fd4328403686fc6).
-New option in the `[anonymized_dns]` section: `skip_incompatible`, to ignore resolvers incompatible with Anonymized DNS instead of using them without a relay.
+* New option in the `[anonymized_dns]` section: `skip_incompatible`, to ignore resolvers incompatible with Anonymized DNS instead of using them without a relay.
 * The server latency benchmark is faster while being able to perform more retries if necessary.
 * Continuous integration has been moved to GitHub Actions.
 
@@ -32,15 +57,15 @@ Updated binary files to [2.0.40](https://github.com/DNSCrypt/dnscrypt-proxy/rele
 
 
 ## 2.0.39
-* Updated binary files to [2.0.39](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.39) | jedisct1
+* Updated binary files to [2.0.39](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.39) by jedisct1
 
 
 ## 2.0.38
-* Updated binary files to [2.0.38](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.38) | jedisct1
+* Updated binary files to [2.0.38](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.38) by jedisct1
 
 
 ## 2.0.37
-* Updated binary files to [2.0.37](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.37) | jedisct1
+* Updated binary files to [2.0.37](https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.37) by jedisct1
 
 
 ## 2.0.35
@@ -62,7 +87,7 @@ Updated binary files to [2.0.40](https://github.com/DNSCrypt/dnscrypt-proxy/rele
 
 ## 2.0.34
 
-#### Updated binary files to 2.0.34 | jedisct1
+#### Updated binary files to 2.0.34 by jedisct1
 * Blacklisted names are now also blocked if they appear in `CNAME`
 pointers.
 * `dnscrypt-proxy` can now act as a local DoH *server*. Firefox can
@@ -78,7 +103,7 @@ your DNS proxy.
 
 ## 2.0.33
 
-#### Updated binary files to 2.0.33 | jedisct1
+#### Updated binary files to 2.0.33 by jedisct1
 * Fixes an issue that caused some valid queries to return `PARSE_ERROR`.
 * On certificate errors, the server name is now logged instead of the
 provider name, which is generally more useful.
@@ -110,7 +135,7 @@ but it includes a `SERVFAIL` error code).
 
 ## 2.0.31
 
-#### Updated binary files to 2.0.31 | jedisct1
+#### Updated binary files to 2.0.31 by jedisct1
 * This version fixes a startup issue introduced in version 2.0.29, on systems for which the service cannot be automatically installed (such as OpenBSD and FreeBSD). Reported by @5ch17 and Vinícius Zavam, and fixed by Will Elwood, thanks!
 * This version fixes two regressions introduced in version 2.0.29: DoH server couldn't be reached over IPv6 any more, and the proxy couldn't be interrupted while servers were being benchmarked.
 
@@ -120,7 +145,7 @@ but it includes a `SERVFAIL` error code).
 
 ## 2.0.29
 
-#### Updated binary files to 2.0.29 | jedisct1
+#### Updated binary files to 2.0.29 by jedisct1
 * Support for Anonymized DNS has been added!
 * Wait before stopping, fixing an issue with Unbound (thanks to Vladimir Bauer)
 * DNS stamps are now included in the `-list-all -json` ouptut
@@ -143,7 +168,7 @@ but it includes a `SERVFAIL` error code).
 
 ## 2.0.29-beta.3
 
-#### Updated binary files to 2.0.29-beta.3 | jedisct1
+#### Updated binary files to 2.0.29-beta.3 by jedisct1
 * Support for Anonymized DNSCrypt has been added.
 * Latency with large responses has actually been reduced.
 * DNSCrypt certificates can now be retrieved over Tor, proxies, and DNS relays.
@@ -159,7 +184,7 @@ but it includes a `SERVFAIL` error code).
 
 ## 2.0.28
 
-#### Updated binary files to 2.0.28 | jedisct1
+#### Updated binary files to 2.0.28 by jedisct1
 * Invalid server entries are now skipped instead of preventing a source from being used. Thanks to Alison Winters for the contribution!
 * Truncated responses are immediately retried over TCP instead of waiting for the client to retry. This reduces the latency for large responses.
 * Responses sent to the local network are assumed to support at least 1252 bytes packets, and use optional information from EDNS up to 4096 bytes. This also reduces latency.
@@ -168,7 +193,7 @@ but it includes a `SERVFAIL` error code).
 
 ## 2.0.27
 
-#### Updated binary files to 2.0.27 | jedisct1
+#### Updated binary files to 2.0.27 by jedisct1
 * The X25519 implementation was changed from using the Go standard implementation to using Cloudflare's CIRCL library. Unfortunately, CIRCL appears to be broken on big-endian systems. That change has been reverted.
 * All the dependencies have been updated.
 

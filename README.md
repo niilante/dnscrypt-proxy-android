@@ -54,7 +54,7 @@ I dislike that other Magisk Android modules are hosted on Telegram, so I opened 
 - ⛔️ `DoH` is disabled, due to [privacy concerns](https://github.com/CHEF-KOCH/FFCK/issues/7)
 - ℹ️ `refused` is been set to respond to blocked queries
 - ℹ️ The DNS query max. response time was changed from `5000` to `4500` ms.
-- ℹ️ [CleanBrowsing](https://cleanbrowsing.org/) is been set as fallback resolver 
+- ℹ️ [CleanBrowsing](https://cleanbrowsing.org/) is been set as fallback resolver
 - ℹ️ The configuration uses `dnscrypt.nl-ns0` (NL), `dnscrypt.eu-dk` (DK), `dnscrypt.eu-nl` (NL), `dnswarden-dc1` (DE), `dnswarden-dc1` (DE), `ffmuc.net` (DE), `ibksturm` (CH), `publicarray-au` (AUS), `publicarray-au2` (AUS), `scaleway-ams` (NL), `scaleway-fr` (FR) and `v.dnscrypt.uk-ipv4` (UK)
 
 
@@ -81,7 +81,7 @@ iptables -t nat -A OUTPUT -p udp ! -d 185.228.168.9 --dport 53 -j DNAT --to-dest
 ip6tables -t nat -A OUTPUT -p tcp ! -d 2a0d:2a00:1::2 --dport 53 -j DNAT --to-destination [::1]:5354
 ip6tables -t nat -A OUTPUT -p udp ! -d 2a0d:2a00:1::2 --dport 53 -j DNAT --to-destination [::1]:5354
 ```
-   
+
 **Shutdown script:**
 ```
 iptables -t nat -D OUTPUT -p tcp ! -d 185.228.168.9 --dport 53 -j DNAT --to-destination 127.0.0.1:5354
@@ -111,7 +111,7 @@ ps -A | grep dnscrypt-proxy
 ```
 
 
-## To complicated I need an app!
+## To complicated, I need an app!
 
 There is an app which brings everything together, DNSCrypt-Proxy, Tor and I2P, it's called [InviZible Pro](https://invizible.net/en/). It's written by Garmatin Oleksandr and uses the official libs from the offical mentioned projects, it includes some "tweaked" integrated configuration settings (e.g. for ads filter [blacklist]) , which you can review and change within the app.
 
@@ -120,7 +120,7 @@ There is an app which brings everything together, DNSCrypt-Proxy, Tor and I2P, i
 - [jedisct1](https://github.com/jedisct1/dnscrypt-proxy) for his DNSCrypt-Proxy2 project
 - [topjohnwu](https://github.com/topjohnwu) for his Magisk project
 - [bluemeda](https://github.com/bluemeda) for the original magisk module
-- [adit](https://github.com/adit) for his dcp 
+- [adit](https://github.com/adit) for his dcp
 - [All contributors](https://github.com/Magisk-Modules-Repo/dnscrypt-proxy/graphs/contributors) and authors from the old dnscrypt-module
 - [All contributors as well as authors](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android) from the Gittea project
 - [Garmatin Oleksandr for InviZible Pro](https://github.com/Gedsh/InviZible) [F-Droid](https://apt.izzysoft.de/fdroid/index/apk/pan.alexander.tordnscrypt)

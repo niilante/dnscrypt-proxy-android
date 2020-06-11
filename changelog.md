@@ -1,8 +1,17 @@
 # Changelog
 
-## 2.0.43
+## 2.0.44
+##### Updated binary files to [2.0.43]((https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.44) by jedisct1
 
+- More updates to the set of block lists, thanks again to IceCodeNew.
+- Netprobes and listening sockets are now ignored when the `-list`, `-list-all`, `-show-certs` or `-check` command-line switches are used.
+- `tls_client_auth` was renamed to `doh_client_x509_auth`. A section with the previous name is temporarily ignored if empty, but will error out if not.
+- Unit tests are now working on 32-bit systems. Thanks to Will Elwood and @lifenjoiner.
+
+
+## 2.0.43
 ##### Updated binary files to [2.0.43]((https://github.com/DNSCrypt/dnscrypt-proxy/releases/tag/2.0.43) by jedisct1
+
 - Built-in support for DNS64 translation has been implemented. (Contributed by Sergey Smirnov, thanks!)
 - Connections to DoH servers can be authenticated using TLS client certificates (Contributed by Kevin O'Sullivan, thanks!)
 - Multiple stamps are now allowed for a single server in resolvers and relays lists.

@@ -35,7 +35,7 @@ Magisk itself does not support all (old) Android versions, and I also believe th
 
 
 ## Pre-built binaries
-Up-2-date, [pre-built binaries](https://github.com/CHEF-KOCH/dnscrypt-proxy-android/tree/master/binary) are available for the following platforms:
+Up-2-date, [pre-built binaries](https://github.com/CHEF-KOCH/dnscrypt-proxy-android/tree/master/binaries) are available for the following platforms:
 - `ARM`
 - `ARM64`
 - `x86`
